@@ -12,9 +12,11 @@ class ViewController: UIViewController, UITextFieldDelegate,
     UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate,
     }
     
     // MARK: UITextFieldDelegate
+
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         // Hide the keyboard
         textField.resignFirstResponder()
@@ -39,6 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate,
     }
     
     // MARK: UIImagePickerControllerDelegate
+
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -50,9 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate,
     }
 
     // MARK: Actions
-    @IBAction func setDefaultLabelText(sender: UIButton) {
-        mealNameLabel.text = "Default Text"
-    }
 
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         nameTextField.resignFirstResponder()
